@@ -1,0 +1,71 @@
+# ===================================================================
+# Spotify ETL Pipeline - Git Ignore Rules
+# ===================================================================
+
+# Credentials & Secrets
+*.env
+.env.*
+config.json
+credentials/
+secrets/
+*.pem
+*.key
+
+# AWS
+.aws/
+aws-exports.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+ENV/
+env/
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Data Files (Don't commit actual data)
+raw_data/*.json
+raw_data/**/*.json
+transformed_data/**/*.csv
+logs/**/*.json
+*.log
+
+# But keep directory structure
+!raw_data/.gitkeep
+!raw_data/to_processed/.gitkeep
+!raw_data/already_processed/.gitkeep
+!transformed_data/.gitkeep
+!transformed_data/album_data/.gitkeep
+!transformed_data/artist_data/.gitkeep
+!transformed_data/song_data/.gitkeep
+!logs/.gitkeep
+!logs/execution_logs/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.bak
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Snowflake
+snowflake.session
