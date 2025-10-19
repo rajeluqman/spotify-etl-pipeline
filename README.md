@@ -34,23 +34,7 @@ Automated serverless ETL pipeline that extracts Spotify playlist data via API, t
 ## ️ Architecture
 
 ```
-┌─────────────┐      ┌──────────────┐      ┌─────────────┐      ┌─────────────┐
-│  Spotify    │      │  AWS Lambda  │      │   AWS S3    │      │  Snowflake  │
-│     API     │─────▶│  Extraction  │─────▶│   Bucket    │─────▶│   Warehouse │
-│             │      │              │      │             │      │             │
-└─────────────┘      └──────────────┘      └─────────────┘      └─────────────┘
-                              │                    │                    │
-                              ▼                    ▼                    ▼
-                     ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-                     │  Raw JSON    │    │ Transformed  │    │  Analytics   │
-                     │  (Raw Data)  │    │   CSV Data   │    │   Tables     │
-                     └──────────────┘    └──────────────┘    └──────────────┘
-                              │
-                              ▼
-                     ┌──────────────┐
-                     │  AWS Lambda  │
-                     │Transformation│
-                     └──────────────┘
+https://github.com/user-attachments/assets/5f45892a-9055-492d-89fa-563a3c00ee9c
 ```
 
 ### Data Flow
