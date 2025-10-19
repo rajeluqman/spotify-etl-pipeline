@@ -34,7 +34,7 @@ Automated serverless ETL pipeline that extracts Spotify playlist data via API, t
 ## ️ Architecture
 
 ```
-https://github.com/user-attachments/assets/5f45892a-9055-492d-89fa-563a3c00ee9c
+![Architecture Diagram](https://github.com/user-attachments/assets/5f45892a-9055-492d-89fa-563a3c00ee9c)
 ```
 
 ### Data Flow
