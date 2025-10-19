@@ -1,4 +1,4 @@
-# Ìæµ Spotify ETL Pipeline
+#  Spotify ETL Pipeline
 
 > End-to-end automated data pipeline for Spotify playlist analytics using AWS Lambda, S3, and Snowflake
 
@@ -7,7 +7,7 @@
 [![Snowflake](https://img.shields.io/badge/Snowflake-Ready-29B5E8.svg)](https://www.snowflake.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Ì≥ã Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Architecture](#architecture)
@@ -21,17 +21,17 @@
 - [Sample Analytics](#sample-analytics)
 - [Cost Estimates](#cost-estimates)
 
-## ÌæØ Overview
+##  Overview
 
 Automated serverless ETL pipeline that extracts Spotify playlist data via API, transforms it into normalized tables, and loads it into Snowflake data warehouse for business intelligence and analytics.
 
 **Key Metrics:**
 - ‚ö° **Near real-time ingestion** - Data available within 5 minutes
-- Ì≥ä **Star schema design** - Optimized for analytics queries
-- Ì¥Ñ **Fully automated** - Serverless architecture with event-driven triggers
-- Ì≤∞ **Cost-efficient** - ~$0.02/month using AWS free tier
+-  **Star schema design** - Optimized for analytics queries
+-  **Fully automated** - Serverless architecture with event-driven triggers
+-  **Cost-efficient** - ~$0.02/month using AWS free tier
 
-## ÌøóÔ∏è Architecture
+## Ô∏è Architecture
 
 ```
 ‚îå‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îê      ‚îå‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îê      ‚îå‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îê      ‚îå‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îê
@@ -71,7 +71,7 @@ Automated serverless ETL pipeline that extracts Spotify playlist data via API, t
 - ‚úÖ **Cost Optimization** - Serverless architecture, pay-per-use model
 - ‚úÖ **Scalable Design** - Handles 10K+ tracks per playlist
 
-## Ìª†Ô∏è Tech Stack
+## Ô∏è Tech Stack
 
 | Component | Technology | Purpose |
 |-----------|-----------|---------|
@@ -89,7 +89,7 @@ Automated serverless ETL pipeline that extracts Spotify playlist data via API, t
 - `boto3` - AWS SDK
 - `pandas` - Data transformation
 
-## Ì≥Å Project Structure
+##  Project Structure
 
 ```
 spotify-etl-pipeline/
@@ -122,7 +122,7 @@ spotify-etl-pipeline/
 ‚îî‚îÄ‚îÄ transformed_data/                 # CSV files (git-ignored)
 ```
 
-## Ì∫Ä Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -164,7 +164,7 @@ aws lambda invoke \
   response.json
 ```
 
-## Ì≥ä Data Model
+##  Data Model
 
 ### Star Schema Design
 
@@ -188,7 +188,7 @@ aws lambda invoke \
 
 All tables include timestamps: `extracted_at`, `transformed_at`, `loaded_at`
 
-## Ì≥¶ Deployment
+##  Deployment
 
 ### AWS Lambda Deployment
 
@@ -217,7 +217,7 @@ aws lambda create-function \
 
 See complete guide: [`snowflake/deployment/setup_guide.md`](snowflake/deployment/setup_guide.md)
 
-## Ì≥à Monitoring
+##  Monitoring
 
 ### Health Checks
 
@@ -245,7 +245,7 @@ WHERE extracted_at >= DATEADD(day, -7, CURRENT_DATE());
 
 See all monitoring queries: [`snowflake/monitoring/validation_queries.sql`](snowflake/monitoring/validation_queries.sql)
 
-## Ì≥ä Sample Analytics
+##  Sample Analytics
 
 ### Top 10 Most Popular Songs
 
@@ -273,7 +273,7 @@ FROM tblAlbum
 GROUP BY album_type;
 ```
 
-## Ì≤∞ Cost Estimates
+##  Cost Estimates
 
 | Service | Usage | Cost/Month |
 |---------|-------|-----------|
@@ -283,11 +283,11 @@ GROUP BY album_type;
 | **Snowflake** | Minimal queries | $0.01 |
 | **Total** | | **~$0.02/month** |
 
-## Ì≥ù License
+##  License
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
-## Ìπè Acknowledgments
+##  Acknowledgments
 
 - [Spotify Web API](https://developer.spotify.com/documentation/web-api)
 - [Snowflake Documentation](https://docs.snowflake.com)
